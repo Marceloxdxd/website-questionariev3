@@ -1,0 +1,13 @@
+<div style="margin-bottom:50px;">
+    <h5 style="color: rgb(50 50 50); margin-bottom:30px">{{ ropa['nombre'] }}</h5>
+    <img class="border-bottom" style="padding-bottom:8px; margin-bottom:16px" src="/static/ropa1.jpg" class="card-img-top" alt="...">
+    <div>
+      <b style="margin-bottom:4px">Descripcion:</b> {{ ropa['descripcion'] }}
+    </div>
+    {% if 'precio' in ropa %}
+    <div>
+      <b>Precio:  $</b> {{ ropa['precio'] }}
+    </div>
+    {% endif %}
+  </div>
+  
