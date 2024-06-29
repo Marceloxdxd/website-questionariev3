@@ -1,18 +1,48 @@
-<div style="margin-bottom:50px;">
-    <h5 style="color: rgb(50 50 50); margin-bottom:30px">{{ ropa['nombre'] }}</h5>
+<style>
+  .ropa-container {
+    margin-bottom: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+  }
+
+  .ropa-title {
+    color: #323232; /* Slightly darker for better readability */
+    margin-bottom: 30px;
+    font-size: 24px; /* Larger font size for titles */
+  }
+
+  .ropa-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  .ropa-description, .ropa-price {
+    margin-bottom: 10px;
+    font-size: 18px; /* Slightly larger for readability */
+  }
+
+  .ropa-price {
+    font-weight: bold; /* Make price stand out */
+  }
+</style>
+
+<div class="ropa-container">
+    <h5 class="ropa-title">{{ ropa['nombre'] }}</h5>
 
     {% if 'imagen' in ropa %}
     <div>
-    <img src="{{ ropa['imagen'] }}" style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
+    <img src="{{ ropa['imagen'] }}" class="ropa-image">
     </div>
     {% endif %}
-    <div>
-      <b style="margin-bottom:4px">Descripcion:</b> {{ ropa['descripcion'] }}
+    <div class="ropa-description">
+      <b>Descripcion:</b> {{ ropa['descripcion'] }}
     </div>
     {% if 'precio' in ropa %}
-    <div>
+    <div class="ropa-price">
       <b>Precio:  $</b> {{ ropa['precio'] }}
     </div>
     {% endif %}
-  </div>
-  
+</div>
